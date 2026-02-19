@@ -1,17 +1,12 @@
 # MetaCall MCP Server
 
-## Overview
-
-This repository implements a [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server in TypeScript on top of the `metacall/protocol` API.
-
-It exposes the complete MetaCall FaaS surface as MCP tools.
+A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server implemented in TypeScript on top of the `metacall/protocol` API. It exposes the complete MetaCall FaaS surface as MCP tools.
 
 ---
 
 ## Architecture
 
-### Layers
-
+```
 ┌────────────────────────────┐
 │         MCP Client         │
 │ (CLI / IDE / Local LLM)    │
@@ -37,6 +32,7 @@ It exposes the complete MetaCall FaaS surface as MCP tools.
 │        MetaCall FaaS       │
 │  (Deploy + Runtime Layer)  │
 └────────────────────────────┘
+```
 
 ---
 
