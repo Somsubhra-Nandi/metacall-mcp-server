@@ -1,0 +1,23 @@
+{
+  "name": "metacall-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@metacall/protocol": "^0.1.26",
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "axios": "^1.13.5",
+    "form-data": "^4.0.5",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
