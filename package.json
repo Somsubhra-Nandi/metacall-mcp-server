@@ -9,7 +9,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@metacall/protocol": "^0.1.26",
+    "@metacall/protocol": "^0.1.27",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "axios": "^1.13.5",
     "form-data": "^4.0.5",
