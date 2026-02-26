@@ -1,17 +1,20 @@
-import * as metacallProtocolModule from "@metacall/protocol";
+import metacallProtocolImport from "@metacall/protocol";
+import type { API } from "@metacall/protocol";
 
 if (!process.env.METACALL_TOKEN) {
-  throw new Error("Missing METACALL_TOKEN,renew your token");
+  throw new Error("Missing METACALL_TOKEN");
 }
 
 if (!process.env.METACALL_BASE_URL) {
-  throw new Error("Missing METACALL_BASE_URL,put your faas url");
+  throw new Error("Missing METACALL_BASE_URL");
 }
 
-//The callable function:
-const metacallProtocol = (metacallProtocolModule as any).default.default;
+// Fix CommonJS default export 
+const metacallProtocol =
+  (metacallProtocolImport as any).default ??
+  metacallProtocolImport;
 
-export const api = metacallProtocol(
-  process.env.METACALL_TOKEN!,
-  process.env.METACALL_BASE_URL!
+export const api: API = metacallProtocol(
+  process.env.METACALL_TOKEN,
+  process.env.METACALL_BASE_URL
 );
