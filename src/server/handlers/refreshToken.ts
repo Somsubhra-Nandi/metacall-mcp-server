@@ -12,21 +12,11 @@ export const refreshTokenTool: MCPToolDefinition = {
   execute: createToolHandler(
     RefreshTokenSchema,
     async () => {
-      try {
-        const newToken = await api.refresh();
-        return {
-          success: true,
-          token: newToken,
-          message: "Authentication token refreshed successfully"
-        };
-      } catch (error) {
-        return {
-          success: false,
-          message: error instanceof Error
-            ? error.message
-            : "Failed to refresh authentication token"
-        };
-      }
+      const newToken = await api.refresh();
+      return {
+        token: newToken,
+        message: "Authentication token refreshed successfully"
+      };
     }
   )
 };
