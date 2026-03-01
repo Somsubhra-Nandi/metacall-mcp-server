@@ -12,13 +12,22 @@ export async function safeExecute<T>(fn: () => Promise<T>): Promise<T> {
 
     if (isProtocolError(err)) {
       const protocolErr = err as ProtocolError;
-      throw new Error(`Protocol error: ${protocolErr.message}`);
+      throw new Error(JSON.stringify({
+        type: "ProtocolError",
+        message: protocolErr.message,
+        code: protocolErr.code
+      }));
     }
 
     if (err instanceof Error) {
-      throw err;
+      throw new Error(JSON.stringify({
+        type: "RuntimeError",
+        message: err.message
+      }));
     }
 
-    throw new Error("Unknown error occurred");
+    throw new Error(JSON.stringify({
+      type: "UnknownError"
+    }));
   }
 }
