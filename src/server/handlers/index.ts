@@ -5,6 +5,7 @@ import { refreshTokenTool } from "./refreshToken.js";
 import { inspectTool } from "./inspect.js";
 import { inspectByNameTool } from "./inspectByName.js";
 import { listSubscriptionsTool } from "./listSubscriptions.js";
+import { uploadTool } from "./upload.js";
 
 //export all tools
 
@@ -15,5 +16,6 @@ export const tools = [
   refreshTokenTool,
   inspectTool,
   inspectByNameTool,
-  listSubscriptionsTool
+  listSubscriptionsTool,
+  uploadTool
 ];
