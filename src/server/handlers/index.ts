@@ -4,6 +4,7 @@ import { deployEnabledTool } from "./account.js";
 import { refreshTokenTool } from "./refreshToken.js";
 import { inspectTool } from "./inspect.js";
 import { inspectByNameTool } from "./inspectByName.js";
+import { listSubscriptionsTool } from "./listSubscriptions.js";
 
 //export all tools
 
@@ -13,5 +14,6 @@ export const tools = [
   deployEnabledTool,
   refreshTokenTool,
   inspectTool,
-  inspectByNameTool
+  inspectByNameTool,
+  listSubscriptionsTool
 ];
