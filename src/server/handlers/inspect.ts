@@ -3,7 +3,7 @@ import { createToolHandler } from "../toolFactory.js";
 import { InspectSchema } from "../schemas/inspect.schema.js";
 import type { MCPToolDefinition } from "../types.js";
 
-//inspect tool definition to list all deployments available in the MetaCall FaaS account
+//inspect tool definition to list all deployments available in that specific MetaCall FaaS account
 export const inspectTool: MCPToolDefinition = {
   name: "inspect",
   description: "Lists all deployments available in the MetaCall FaaS account.",

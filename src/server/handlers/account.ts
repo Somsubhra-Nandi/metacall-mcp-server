@@ -3,7 +3,7 @@ import { createToolHandler } from "../toolFactory.js";
 import { DeployEnabledSchema } from "../schemas/account.schema.js";
 import type { MCPToolDefinition } from "../types.js";
 
-//deployEnabled tool definition to check if deployment is enabled for the MetaCall account
+//deployEnabled tool definition to check if deployment is enabled for this specific MetaCall account
 export const deployEnabledTool: MCPToolDefinition = {
   name: "deployEnabled",
 

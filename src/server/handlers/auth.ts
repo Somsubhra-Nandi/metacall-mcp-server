@@ -3,7 +3,7 @@ import { createToolHandler } from "../toolFactory.js";
 import { ValidateAuthSchema } from "../schemas/auth.schema.js";
 import type { MCPToolDefinition } from "../types.js";
 
-//validate tool definition to check if the current MetaCall authentication token
+//validate tool definition to check if the current MetaCall authentication token is valid
 export const validateAuthTool: MCPToolDefinition = {
   name: "validate",
 
