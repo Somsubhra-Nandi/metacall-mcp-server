@@ -4,3 +4,6 @@ dist/
 .env.local
 .env.production
 .env.development
+#local testing files
+hello-api.zip
+test-upload.js
