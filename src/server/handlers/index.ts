@@ -6,7 +6,7 @@ import { inspectTool } from "./inspect.js";
 import { inspectByNameTool } from "./inspectByName.js";
 import { listSubscriptionsTool } from "./listSubscriptions.js";
 import { uploadTool } from "./upload.js";
-
+import { deployTool } from "./deploy.js";
 //export all tools
 
 export const tools = [
@@ -17,5 +17,6 @@ export const tools = [
   inspectTool,
   inspectByNameTool,
   listSubscriptionsTool,
-  uploadTool
+  uploadTool,
+  deployTool
 ];
