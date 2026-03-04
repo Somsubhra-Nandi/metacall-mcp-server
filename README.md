@@ -179,3 +179,81 @@ The Model Context Protocol (MCP) allows us to use this server across various AI 
 ```
 
 3. In the Antigravity UI, navigate to the **Agent Manager** panel, click **Manage MCP Servers**, and hit **Refresh**. The server will be connected.
+
+# Upload Tool – How to Provide the Zip Package
+
+The upload tool sends a zip package to MetaCall Cloud before deploying it. The MetaCall API expects the package as a binary buffer. The zip file must be encoded as a base64 string and then reconstructed into a buffer inside the MCP server.
+
+Base64 works across all MCP clients because it is simply a text representation of the binary zip file.
+
+Two ways of providing the zip package are supported:
+
+---
+
+## 1. zipBase64 (Recommended and works for all)
+
+This is the portable method and works with all MCP clients such as Claude, antigravity and others.
+
+### Steps
+
+1. Create a zip file containing your source code. The source files should be at the root of the zip archive.
+
+   Example structure:
+   ```
+   package.zip
+   └── abc.js
+   ```
+
+2. Convert the zip file to a base64 string.
+
+   **Linux:**
+   ```bash
+   base64 package.zip
+   ```
+
+   **macOS:**
+   ```bash
+   base64 package.zip
+   ```
+
+   **Windows (PowerShell):**
+   ```powershell
+   [Convert]::ToBase64String([IO.File]::ReadAllBytes("absolute path of the zip file"))
+   ```
+
+3. Pass the base64 string to the upload tool.
+
+   Example tool input:
+   ```json
+   {
+     "name": "myPackage",
+     "zipBase64": "ABCDEF...",
+     "runners": ["node"]
+   }
+   ```
+
+The MCP server will convert the base64 string back into a binary buffer and send it to the MetaCall API.
+
+---
+
+## 2. zipPath (Local Development Only)
+
+When the MCP server has direct access to the local filesystem (for example when testing locally or using tools like Antigravity), the zip file can be provided as a file path.
+
+Example:
+```json
+{
+  "name": "myPackage",
+  "zipPath": "./package.zip"
+}
+```
+
+The MCP server reads the file from disk using the provided path and uploads it to MetaCall.
+
+> **Note:** `zipPath` may not work with remote LLM clients like Claude because those clients cannot access files on the MCP server's filesystem.
+
+---
+
+## Recommendation
+
+For compatibility across all MCP clients, using **`zipBase64`** is recommended.
