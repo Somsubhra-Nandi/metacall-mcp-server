@@ -9,6 +9,7 @@ import { uploadTool } from "./upload.js";
 import { deployTool } from "./deploy.js";
 import { addTool } from "./add.js";
 import { deployDeleteTool } from "./deployDelete.js";
+import { branchListTool } from "./branchList.js";
 
 //export all tools
 export const tools = [
@@ -22,5 +23,6 @@ export const tools = [
   uploadTool,
   deployTool,
   addTool,
-  deployDeleteTool
+  deployDeleteTool,
+  branchListTool
 ];
