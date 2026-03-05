@@ -7,8 +7,9 @@ import { inspectByNameTool } from "./inspectByName.js";
 import { listSubscriptionsTool } from "./listSubscriptions.js";
 import { uploadTool } from "./upload.js";
 import { deployTool } from "./deploy.js";
-//export all tools
+import { addTool } from "./add.js";
 
+//export all tools
 export const tools = [
   readyTool,
   validateAuthTool,
@@ -18,5 +19,6 @@ export const tools = [
   inspectByNameTool,
   listSubscriptionsTool,
   uploadTool,
-  deployTool
+  deployTool,
+  addTool
 ];
