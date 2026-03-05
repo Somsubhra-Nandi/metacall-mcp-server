@@ -8,6 +8,7 @@ import { listSubscriptionsTool } from "./listSubscriptions.js";
 import { uploadTool } from "./upload.js";
 import { deployTool } from "./deploy.js";
 import { addTool } from "./add.js";
+import { deployDeleteTool } from "./deployDelete.js";
 
 //export all tools
 export const tools = [
@@ -20,5 +21,6 @@ export const tools = [
   listSubscriptionsTool,
   uploadTool,
   deployTool,
-  addTool
+  addTool,
+  deployDeleteTool
 ];
