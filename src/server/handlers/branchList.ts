@@ -6,7 +6,7 @@ import type { MCPToolDefinition } from "../types.js";
 //Definition of the "branchList" tool.
 export const branchListTool: MCPToolDefinition = {
   name: "branchList",
-  description: "List all branches of a Git repository.",
+  description: "List all branches of a Git repository. Use this when you need to know which branch to inspect or deploy.",
   schema: BranchListSchema,
 
   execute: createToolHandler(
