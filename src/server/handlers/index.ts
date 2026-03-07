@@ -11,7 +11,10 @@ import { addTool } from "./add.js";
 import { deployDeleteTool } from "./deployDelete.js";
 import { branchListTool } from "./branchList.js";
 import { fileListTool } from "./fileList.js";
-import { listSubscriptionsDeploysTool } from "./listSubscriptionsDeploys.js"
+import { listSubscriptionsDeploysTool } from "./listSubscriptionsDeploys.js";
+import { callTool } from "./call.js";
+import { invokeTool } from "./invoke.js";
+
 //export all tools
 export const tools = [
   readyTool,
@@ -27,5 +30,7 @@ export const tools = [
   deployDeleteTool,
   branchListTool,
   fileListTool,
-  listSubscriptionsDeploysTool
+  listSubscriptionsDeploysTool,
+  callTool,
+  invokeTool
 ];
