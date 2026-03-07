@@ -15,6 +15,7 @@ import { listSubscriptionsDeploysTool } from "./listSubscriptionsDeploys.js";
 import { callTool } from "./call.js";
 import { invokeTool } from "./invoke.js";
 import { awaitTool } from "./await.js";
+import { logsTool } from "./logs.js";
 
 //export all tools
 export const tools = [
@@ -34,5 +35,6 @@ export const tools = [
   listSubscriptionsDeploysTool,
   callTool,
   invokeTool,
-  awaitTool
+  awaitTool,
+  logsTool
 ];
