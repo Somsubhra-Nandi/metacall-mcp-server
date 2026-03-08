@@ -8,7 +8,7 @@ export const logsTool: MCPToolDefinition = {
   name: "logs",
 
   description:
-    "Retrieve logs from a MetaCall deployment container. The container usually matches the runtime language used in the deployment (e.g., python, node).",
+    "Retrieve logs from a MetaCall deployment container. The container usually matches the runtime language used in the deployment (e.g., python, node).Use this tool when debugging a deployment or checking runtime output.",
 
   schema: LogsSchema,
 
