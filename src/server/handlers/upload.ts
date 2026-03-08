@@ -7,7 +7,7 @@ import type { MCPToolDefinition } from "../types.js";
 //upload tool definition to upload a zip package to MetaCall Cloud before deploying.
 export const uploadTool: MCPToolDefinition = {
   name: "upload",
-  description: "Upload a zip package to MetaCall Cloud before deploying.",
+  description:"Upload a zip package to MetaCall Cloud. Provide either:1) zipBase64 (preferred if file already loaded)2) zipPath (absolute path to a zip file accessible by the MCP server)",
   schema: UploadSchema,
 
   execute: createToolHandler(
