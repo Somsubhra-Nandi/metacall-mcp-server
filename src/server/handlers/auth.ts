@@ -8,7 +8,9 @@ export const validateAuthTool: MCPToolDefinition = {
   name: "validate",
 
   description:
-    "Validates the current MetaCall authentication token.",
+  "Validates the current MetaCall authentication token used to access the MetaCall FaaS API. \
+  Use this tool when you need to confirm that the authentication token is still valid before performing operations such as deploying packages, invoking serverless functions, or retrieving account information. \
+  Returns a boolean indicating whether the token is valid.",
 
   schema: ValidateAuthSchema,
 
