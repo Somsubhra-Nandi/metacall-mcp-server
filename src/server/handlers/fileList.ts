@@ -6,7 +6,10 @@ import type { MCPToolDefinition } from "../types.js";
 //Definition of the "fileList" tool.
 export const fileListTool: MCPToolDefinition = {
   name: "fileList",
-  description: "List files from a Git repository branch. Use this instead of browsing the repository when you need to inspect its contents.",
+  description:
+  "Lists the files available in a specific branch of a Git repository. \
+  Use this tool when you need to inspect the files of a repository branch, verify the presence of certain files, or explore the repository structure before deploying or analyzing code. \
+  Requires the repository URL and branch name, and returns the list of file paths found in that branch.",
   schema: FileListSchema,
 
   execute: createToolHandler(
