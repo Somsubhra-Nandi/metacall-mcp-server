@@ -7,7 +7,9 @@ import type { MCPToolDefinition } from "../types.js";
 export const deployEnabledTool: MCPToolDefinition = {
   name: "deployEnabled",
 
-  description: "Checks whether deployment is enabled for the MetaCall account.",
+  description: "Checks whether the current MetaCall account is allowed to deploy serverless functions. \
+  Use this tool before attempting to upload or deploy packages to ensure the account has deployment permissions enabled. \
+  Returns a boolean indicating whether deployments are permitted for the authenticated account.",
 
   schema: DeployEnabledSchema,
 
