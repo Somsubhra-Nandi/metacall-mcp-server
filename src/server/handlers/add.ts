@@ -6,7 +6,10 @@ import type { MCPToolDefinition } from "../types.js";
 //Definition of the "add" tool.It registers a repository in MetaCall FaaS for deployment.
 export const addTool: MCPToolDefinition = {
   name: "add",
-  description: "Registers a repository in MetaCall FaaS for deployment.",
+  description:"Registers a Git repository in MetaCall FaaS so it can be deployed as a serverless function.\
+  Use this tool when the user wants to deploy code directly from a repository instead of uploading a zip file.\
+  Requires the repository URL and branch name.\
+  Returns the repository identifier that will later be used for deployments.",
   schema: AddSchema,
 
   execute: createToolHandler(
