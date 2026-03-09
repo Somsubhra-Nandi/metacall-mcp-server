@@ -6,7 +6,10 @@ import type { MCPToolDefinition } from "../types.js";
 //definition of inspectByName tool, which allows users to inspect a deployment by its suffix.
 export const inspectByNameTool: MCPToolDefinition = {
   name: "inspectByName",
-  description: "Inspect deployment by suffix",
+  description:
+  "Retrieves detailed information about a specific MetaCall deployment using its suffix. \
+    Use this tool when the deployment suffix is already known and you need to inspect its configuration, metadata, or runtime details. \
+    If the suffix is unknown, use the 'inspect' tool first to list all available deployments.",
   schema: InspectByNameSchema,
 
   execute: createToolHandler(
