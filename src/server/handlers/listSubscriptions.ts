@@ -8,7 +8,7 @@ export const listSubscriptionsTool: MCPToolDefinition = {
   name: "listSubscriptions",
 
   description:
-    "Retrieve all subscription plans available in the MetaCall account and their usage count.",
+  "Retrieves all subscription plans available in the MetaCall account and shows how many deployments are currently using each plan. Use this tool when you need to understand available plans or check current plan usage before deploying.",
 
   schema: ListSubscriptionsSchema,
 
