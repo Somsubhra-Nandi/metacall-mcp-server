@@ -6,7 +6,11 @@ import type { MCPToolDefinition } from "../types.js";
 //Definition of the tool to delete the deployment from MetaCall FaaS.
 export const deployDeleteTool: MCPToolDefinition = {
   name: "deployDelete",
-  description: "Deletes a deployment and its associated package from MetaCall FaaS using the deployment suffix.",
+  description:
+  "Deletes an existing deployment and its associated package from MetaCall FaaS. \
+  Use this tool when the user wants to remove a deployed service or clean up an existing deployment. \
+  Requires the deployment suffix and optionally the version. \
+  This operation permanently removes the deployment and its resources from the MetaCall platform.",
   schema: DeployDeleteSchema,
 
   execute: createToolHandler(
