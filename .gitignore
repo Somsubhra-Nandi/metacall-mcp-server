@@ -7,3 +7,4 @@ dist/
 #local testing files
 hello-api.zip
 test-upload.js
+repo.ts
