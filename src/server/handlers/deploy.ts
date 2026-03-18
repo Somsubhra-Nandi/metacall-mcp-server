@@ -9,11 +9,15 @@ export const deployTool: MCPToolDefinition = {
   description: `
 Deploy a package or repository to MetaCall Cloud.
 
+CRITICAL PREREQUISITE: 
+MetaCall only allows ONE deployment per subscription plan (Essential, Standard, Premium). 
+Before executing this deployment, you MUST check the user's currently active deployments and subscriptions to find an unused plan. If you attempt to deploy on a plan that is already in use, it will fail.
+
 Parameters:
 - name:
     - For ResourceType.Package -> package name
     - For ResourceType.Repository -> The exact "id" returned by the Add repository tool. Do NOT use the Git URL.
-- plan: subscription plan (Essential, Standard, Premium)
+- plan: An available, UNUSED subscription plan (Essential, Standard, or Premium).
 - release: branch name (e.g. main)
 - version: deployment version (e.g. v1)
 `,
@@ -23,8 +27,6 @@ Parameters:
     DeploySchema,
     async ({ name, env, plan, resourceType, release, version }) => {
       
-      // "name" is now exactly the suffix we need (either the package name or the repo id).
-      // We no longer need to parse URLs because Claude provides the exact MetaCall ID!
       const deployment = await api.deploy(
         name,
         env ?? [],
