@@ -34,7 +34,7 @@ export const tools = [
   fileListTool,
   listSubscriptionsDeploysTool,
   callTool,
-  invokeTool,
+  //invokeTool, invoke is commented out because call and await is sufficient.
   awaitTool,
   logsTool
 ];
